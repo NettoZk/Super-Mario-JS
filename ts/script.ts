@@ -74,3 +74,11 @@ document.addEventListener('keydown', (e: KeyboardEvent) => {
         jump();
     }
 });
+
+document.addEventListener('touchstart', (_e: TouchEvent) => {
+    if (gameOver) {
+      location.reload();
+    } else {
+      jump();
+    }
+  });
