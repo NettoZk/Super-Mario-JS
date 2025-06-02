@@ -137,7 +137,7 @@ body {
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .mario {
       width: 80px;
     }
@@ -145,7 +145,7 @@ body {
     .pipe {
       width: 60px;
     }
-  }
+  } */
   
 
 @keyframes pipe-animation {
