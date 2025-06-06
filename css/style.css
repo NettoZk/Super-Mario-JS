@@ -22,7 +22,9 @@ body {
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    /* animation removida para ser controlada via JS */
+    /* animation: pipe-animation 1.5s infinite linear; */
+    left: 100%; /* começa fora da tela */
 }
 
 .mario {
@@ -66,7 +68,6 @@ body {
     display: block;
 }
 
-
 .overlay {
     position: absolute;
     top: 0;
@@ -82,15 +83,11 @@ body {
     display: block;
 }
 
-.loser.show {
-  display: block;
-}
-
 .overlay.dark {
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .score-board {
@@ -99,16 +96,6 @@ body {
     left: 10px;
     font-size: 24px;
     color: white;
-}
-
-.ground {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    background: url('../images/cenario.png') repeat-x;
-    background-size: cover;
-    z-index: 1;
 }
 
 .score-container {
@@ -147,15 +134,22 @@ body {
     font-weight: bold;
 }
 
-
+/* @media (max-width: 768px) {
+    .mario {
+      width: 80px;
+    }
+  
+    .pipe {
+      width: 60px;
+    }
+  } */
 
 @keyframes pipe-animation {
     from {
-        right: -80px;
+        left: 100%;
     }
-
     to {
-        right: 100%;
+        left: -80px;
     }
 }
 
@@ -163,11 +157,9 @@ body {
     0% {
         bottom: 0;
     }
-
     50% {
         bottom: 180px;
     }
-
     100% {
         bottom: 0;
     }
@@ -177,7 +169,6 @@ body {
     from {
         right: -550px;
     }
-
     to {
         right: 100%;
     }
