@@ -76,7 +76,6 @@ document.addEventListener('keydown', function () {
         jump();
     }
 });
-<<<<<<< HEAD
 document.addEventListener('touchstart', function () {
     if (gameOver) {
         location.reload();
@@ -118,13 +117,3 @@ var startPipeGenerator = function () {
     generate();
 };
 startPipeGenerator();
-=======
-
-document.addEventListener('touchstart', () => {
-    if (gameOver) {
-      location.reload();
-    } else {
-      jump();
-    }
-  });
->>>>>>> 3f78f8c74312d52cc026bbfa3551b7918ab64d5c

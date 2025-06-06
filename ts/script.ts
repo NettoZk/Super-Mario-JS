@@ -4,10 +4,7 @@ const scoreElement = document.getElementById('score') as HTMLElement;
 const loserImage = document.querySelector('.loser') as HTMLImageElement;
 const overlay = document.querySelector('.overlay') as HTMLDivElement;
 const hiScoreElement = document.getElementById('hi-score') as HTMLElement;
-<<<<<<< HEAD
 const gameBoard = document.querySelector('.game-board') as HTMLElement;
-=======
->>>>>>> 3f78f8c74312d52cc026bbfa3551b7918ab64d5c
 
 let isJumping = false;
 let score = 0;
@@ -36,7 +33,6 @@ const updateHiScore = (): void => {
     }
 };
 
-<<<<<<< HEAD
 const handleGameOver = (pipePosition: number, marioPosition: number, collidedPipe: HTMLElement): void => {
     gameOver = true;
 
@@ -55,17 +51,6 @@ const handleGameOver = (pipePosition: number, marioPosition: number, collidedPip
 
     mario.style.animation = 'none';
     mario.style.bottom = `${marioPosition}px`;
-=======
-const handleGameOver = (pipePosition: number, marioPosition: number): void => {
-    gameOver = true;
-
-    pipe.style.animation = 'none';
-    pipe.style.left = `${pipePosition}px`;
-
-    mario.style.animation = 'none';
-    mario.style.bottom = `${marioPosition}px`;
-
->>>>>>> 3f78f8c74312d52cc026bbfa3551b7918ab64d5c
     mario.src = './images/game-over.png';
     mario.style.width = '75px';
     mario.style.marginLeft = '50px';
@@ -74,10 +59,7 @@ const handleGameOver = (pipePosition: number, marioPosition: number): void => {
     overlay.classList.add('dark');
 };
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3f78f8c74312d52cc026bbfa3551b7918ab64d5c
 const loop = setInterval(() => {
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
 
@@ -87,7 +69,6 @@ const loop = setInterval(() => {
         updateHiScore();
     }
 
-<<<<<<< HEAD
     const allPipes = document.querySelectorAll<HTMLElement>('.pipe');
     allPipes.forEach(p => {
         const pipePosition = p.offsetLeft;
@@ -97,12 +78,6 @@ const loop = setInterval(() => {
             clearInterval(loop);
         }
     });
-=======
-    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-        handleGameOver(pipePosition, marioPosition);
-        clearInterval(loop);
-    }
->>>>>>> 3f78f8c74312d52cc026bbfa3551b7918ab64d5c
 }, 10);
 
 // Eventos para pular
@@ -113,7 +88,6 @@ document.addEventListener('keydown', () => {
         jump();
     }
 });
-<<<<<<< HEAD
 document.addEventListener('touchstart', () => {
     if (gameOver) {
         location.reload();
@@ -165,13 +139,3 @@ const startPipeGenerator = (): void => {
 };
 
 startPipeGenerator();
-=======
-
-document.addEventListener('touchstart', (_e: TouchEvent) => {
-    if (gameOver) {
-      location.reload();
-    } else {
-      jump();
-    }
-  });
->>>>>>> 3f78f8c74312d52cc026bbfa3551b7918ab64d5c
